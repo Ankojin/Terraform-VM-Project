@@ -21,9 +21,9 @@ As with the Linux VM, additional disks are created and attached.
 
 3. Common Configuration for Both OS Types:
 Network Interfaces: Both VM types reference network interfaces for connectivity.
-Disk Attachments: Data disks are defined separately and attached to the VM using the azurerm_virtual_machine_data_disk_attachment resource.
-Tags: Tags are dynamically generated based on tags_str, which likely contains key-value pairs for resource categorization.
-Things to Note:
+**Disk Attachments: Data disks are defined separately and attached to the VM using the azurerm_virtual_machine_data_disk_attachment resource**.
+**Tags: Tags are dynamically generated based on tags_str, which likely contains key-value pairs for resource categorization.**
+**Things to Note:**
 The is_windows flag determines which configuration block is executed.
 Custom Cloud-Init: For Linux, cloud-init scripts are used, which could automate software installations, configurations, or other initial setup tasks. For Windows, a PowerShell script is used to join the domain.
 Data Disk Attachment: Each additional disk is defined with properties like disk_size_gb, storage_type, and lun, then attached to the VM.
