@@ -1,3 +1,6 @@
+
+Python code will import the information from the CSV and write to the terraform configuration.
+
 This script is a Terraform configuration that defines resources for deploying either a Linux or Windows virtual machine (VM) on Microsoft Azure, with additional features such as data disks and custom provisioning. Here's a breakdown of the key sections:
 
 1. Linux VM Configuration:
@@ -27,3 +30,15 @@ Network Interfaces: Both VM types reference network interfaces for connectivity.
 The is_windows flag determines which configuration block is executed.
 Custom Cloud-Init: For Linux, cloud-init scripts are used, which could automate software installations, configurations, or other initial setup tasks. For Windows, a PowerShell script is used to join the domain.
 Data Disk Attachment: Each additional disk is defined with properties like disk_size_gb, storage_type, and lun, then attached to the VM.
+
+Prerequisites.
+1. Install Python
+2. Install Terrform
+3. csv file
+
+Steps to run python and Terraform
+
+1. python generate-tf.py ( it will generate the tf in the output path( mentioned in script).
+
+
+
