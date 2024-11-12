@@ -1,24 +1,23 @@
 This script is a Terraform configuration that defines resources for deploying either a Linux or Windows virtual machine (VM) on Microsoft Azure, with additional features such as data disks and custom provisioning. Here's a breakdown of the key sections:
 
 1. Linux VM Configuration:
-Resource Type: azurerm_linux_virtual_machine.
+**Resource Type: azurerm_linux_virtual_machine.**
 Properties:
 Specifies the VM name, resource group, location, and size.
 Uses network interfaces and assigns an admin username/password.
 Defines an OS disk with caching and storage account type settings.
 Sets the OS image with the publisher, offer, SKU, and version.
-Adds tags and custom data (cloud-init) for initialization.
+**Adds tags and custom data (cloud-init) for initialization.
 Data Disks:
-Additional disks are created using the azurerm_managed_disk resource and then attached using the azurerm_virtual_machine_data_disk_attachment resource.
+Additional disks are created using the azurerm_managed_disk resource and then attached using the azurerm_virtual_machine_data_disk_attachment resource.**
 
 2. Windows VM Configuration:
-Resource Type: azurerm_windows_virtual_machine.
+**Resource Type: azurerm_windows_virtual_machine.**
 Properties:
 Similar to the Linux VM but configured for Windows VMs.
-Includes a local-exec provisioner that runs a PowerShell script to join the VM to an Active Directory domain.
+Includes a Custom data runs a PowerShell script to join the VM to an Active Directory domain.
 Data Disks:
 As with the Linux VM, additional disks are created and attached.
-
 
 3. Common Configuration for Both OS Types:
 Network Interfaces: Both VM types reference network interfaces for connectivity.
